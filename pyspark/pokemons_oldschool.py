@@ -1,4 +1,4 @@
-#! /bin/python
+#!/bin/python
 from pyspark import SparkContext
 from pyspark.sql.dataframe import DataFrame
 import pyspark.sql.functions
@@ -14,6 +14,7 @@ df_pokemon.show()
 
 df_generation = df_generation.filter( "date_introduced < '2002-11-21'")
 
+df_generation = df_generation.cache()
 
 df_pokemon = df_pokemon.withColumnRenamed('generation', 'pgeneration')
 df_join = df_pokemon.join(df_generation, on=[df_pokemon.pgeneration == df_generation.generation], how = 'inner')
