@@ -1,0 +1,10 @@
+scoop export \
+--table pokemon_leandro \
+--columns idnum, name, hp, speed \
+--export-dir hdfs://bigdataclu-ns/user/hive/warehouse/work_dataeng.db/pokemon \
+--table pokemon_scoop \
+ 
+
+
+
+
